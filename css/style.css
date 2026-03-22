@@ -827,255 +827,145 @@ html {
   scroll-behavior: auto;
 }
 /* ================= CINEMATIC LANGUAGE STACK ================= */
-
-
-/* LANGUAGE SECTION LAYOUT */
-/* MAIN CONTAINER */
-.languages{
-  max-width:1150px;   /* 🔥 increase little */
-  margin-left:260px;  /* sidebar correct */
-  margin-right:auto;
-
-  padding:100px 40px;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:80px; /* 🔥 more gap between letters & insta */
-}
-
-
-
-.languages .language-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 column */
-  gap: 15px;
-  padding: 10px;
-}
-
-.languages .lang-box {
-  width: 100%;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-
-  .languages .lang-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-body {
-  overflow-x: hidden;
-}
-
-.lang-box {
-  background: #111;
-  border: 1px solid #ff0000;
-  transition: 0.3s;
-}
-
-.lang-box:hover {
-  transform: scale(1.05);
-}   
-/* left image */
-
-/* RIGHT SIDE FIX */
-.language-animation{
-  flex:1;
-  display:flex;
-  justify-content:flex-start; /* 🔥 IMPORTANT CHANGE */
-}
-/* language image */
-
-.language-img{
-width:320px;
-animation:floatLang 4s ease-in-out infinite;
-opacity:0.9;
-}
-
-/* floating animation */
-
-@keyframes floatLang{
-
-0%{ transform:translateY(0px); }
-
-50%{ transform:translateY(-15px); }
-
-100%{ transform:translateY(0px); }
-
-}
-
-/* ===== LANGUAGES SECTION FINAL ===== */
-/* ===== MAIN LAYOUT FIX ===== */
-
+/* SECTION */
+/* SECTION */
 .languages{
   max-width:1000px;
-  margin-left:80px;
-  margin-right: auto; /* 🔥 sidebar width match */
-  padding:120px 40px;
+  margin-left:260px; /* sidebar */
+  padding:100px 40px;
+}
 
+/* TITLE */
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+  color:#ffb400;
+}
+
+/* MAIN FLEX */
+.languages-wrapper{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:60px; /* 🔥 equal spacing */
+  gap:80px;
 }
 
 /* LEFT GRID */
 .languages-column{
+  flex:1;
   display:grid;
   grid-template-columns: repeat(2, 1fr);
-  gap:50px 60px; /* 🔥 balanced spacing */
+  gap:40px;
 }
 
-/* EACH CARD */
+/* CARD */
 .lang-card{
   display:flex;
   align-items:center;
-  gap:60px; /* 🔥 reduce */
+  gap:15px;
 }
 
-/* RIGHT SIDE FIX */
+/* LETTER */
+.letter{
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#111;
+  color:#ffb400;
+  font-size:22px;
+  border-radius:10px;
+}
+
+/* RIGHT SIDE */
 .language-animation{
   flex:1;
   display:flex;
-  justify-content:flex-start; /* 🔥 IMPORTANT CHANGE */
+  justify-content:center;
 }
 
 /* INSTAGRAM */
 .insta-post{
-  width:320px;
+  width:300px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
+/* IMAGE */
+.language-img{
+  width:100%;
+  display:block;
+}
 
+/* ================= MOBILE ================= */
 @media (max-width:768px){
 
   .languages{
-    flex-direction:column; /* 🔥 only mobile */
-    align-items:center;
-    gap:50px;
-    padding:60px 20px;
+    margin-left:0;
+    padding:60px 15px;
   }
 
+  /* 🔥 KEEP SIDE-BY-SIDE */
+  .languages-wrapper{
+    flex-direction:row;
+    align-items:flex-start;
+    gap:15px;
+  }
+
+  /* 🔥 ONE COLUMN TEXT */
   .languages-column{
-    gap:80px;
+    grid-template-columns: 1fr;
+    gap:20px;
   }
 
-  .language-animation{
-    justify-content:center;
+  /* 🔥 SMALL CARD */
+  .insta-post{
+    width:160px;
   }
 
-/* INSTAGRAM CARD */
-.insta-post{
-  width:300px; /* 🔥 consistent size */
-  margin-left:20px; /* 🔥 push slightly right */
-}
+  .language-img{
+    height:140px;
+    object-fit:cover;
+  }
 
 }
 
-
-
-/* RIGHT SIDE FIX */
-.language-animation{
-  flex:1;
-  display:flex;
-  justify-content:flex-start; /* 🔥 IMPORTANT CHANGE */
-}
 
 /* LETTER SIZE */
 .liquid-letter{
-  width: 80px;
-  height:80px;
+  width:90px;
+  height:90px;
 }
 
-/* MASK LETTER */
+/* MASK */
 .letter-mask{
-  font-size:100px;
+  font-size:110px;
   font-weight:900;
   fill:white;
 }
 
 /* OUTLINE */
 .letter-outline{
-  font-size:120px;
-  font-weight:960;
+  font-size:110px;
+  font-weight:900;
   fill:none;
   stroke:#ffb400;
   stroke-width:2;
-  filter:drop-shadow(0 0 8px #ffb400);
+}
+
+/* WAVE COLOR */
+.wave{
+  fill:#ffb400;
+  animation:waveMove 3s linear infinite;
 }
 
 /* WAVE ANIMATION */
-.wave{
-  animation:waveMove 4s linear infinite;
-}
-
 @keyframes waveMove{
   from { transform: translateX(0); }
-  to   { transform: translateX(-400px); }
+  to   { transform: translateX(-200px); }
 }
-
-/* PERCENT */
-.percent{
-  margin-top:10px;
-  font-size:18px;
-  font-weight:700;
-  color:#ffb400;
-  opacity:0;
-  transform:translateY(10px);
-  animation:fadeUp 0.6s ease forwards;
-  animation-delay:calc(var(--delay) + 0.5s);
-}
-
-/* LANGUAGE NAME */
-.lang-name{
-  margin-top:6px;
-  font-size:14px;
-  color:#aaa;
-  letter-spacing:1px;
-  opacity:0;
-  transform:translateY(10px);
-  animation:fadeUp 0.6s ease forwards;
-  animation-delay:calc(var(--delay) + 0.8s);
-}
-
-/* ANIMATIONS */
-@keyframes cardReveal{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.insta-post{
-
-width:350px;
-background:#fff;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
-
-animation:floatLang 4s ease-in-out infinite;
-
-}
-
-.language-img{
-
-width:100%;
-display:block;
-
-}
-
-
 
 /* ================= EXPERIENCE AUTO SCROLL ================= */
 
@@ -1486,21 +1376,7 @@ img {
   flex: 0 0 auto;
   scroll-snap-align: start;
 }
-.languages .language-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  padding: 20px;
-}
 
-.languages .lang-box {
-  width: 100%;
-}
-
-.skills-container {
-  display: flex;
-  gap: 20px;
-}
 
 @media (max-width: 768px) {
   .skills-container {
@@ -1528,77 +1404,6 @@ img {
 
 }
 
-
-@media (max-width:768px){
-
-  .languages{
-    margin-left:0;           /* 🔥 FIX 1 */
-    max-width:100%;
-    flex-direction:column;
-    align-items:center;
-    gap:40px;
-    padding:50px 15px;
-    text-align:center;
-  }
-
-  /* GRID FIX */
-  .languages-column{
-    width:100%;
-    grid-template-columns: repeat(2, 1fr);
-    gap:30px 20px; /* 🔥 balanced */
-    justify-items:center;
-  }
-
-  /* EACH CARD */
-  .lang-card{
-    flex-direction:column;   /* 🔥 stack */
-    gap:8px;                 /* 🔥 reduce */
-    align-items:center;
-  }
-
-  /* LETTER SIZE */
-  .liquid-letter{
-    width:60px;
-    height:60px;
-  }
-
-  /* RIGHT SIDE (INSTA) */
-  .language-animation{
-    width:100%;
-    justify-content:center; /* 🔥 center properly */
-  }
-
-  /* INSTAGRAM */
-  .insta-post{
-    width:90%;
-    max-width:280px;
-    margin:0 auto;
-  }
-
-}
-.insta-post{
-  width:350px;
-  background:#fff;
-  border-radius:12px;
-  overflow:hidden;
-
-  /* 🔥 GLOW EFFECT */
-  box-shadow: 
-    0 0 10px rgba(255, 180, 0, 0.4),
-    0 0 25px rgba(255, 180, 0, 0.3),
-    0 0 50px rgba(255, 180, 0, 0.2);
-
-  animation:floatLang 4s ease-in-out infinite;
-  transition: 0.3s;
-}
-
-/* 🔥 HOVER GLOW BOOST */
-.insta-post:hover{
-  box-shadow: 
-    0 0 15px rgba(255, 180, 0, 0.6),
-    0 0 35px rgba(255, 180, 0, 0.5),
-    0 0 70px rgba(255, 180, 0, 0.4);
-}
 
 
 
