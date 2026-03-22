@@ -829,10 +829,13 @@ html {
 /* ================= CINEMATIC LANGUAGE STACK ================= */
 /* SECTION */
 /* SECTION */
+.main-content{
+  margin-left:260px;
+}
+
 .languages{
-  max-width:1000px;
-  margin-left:260px; /* sidebar */
-  padding:100px 40px;
+  max-width:1100px;
+  margin:0 auto;
 }
 
 /* TITLE */
