@@ -830,11 +830,21 @@ html {
 
 
 /* LANGUAGE SECTION LAYOUT */
+/* MAIN CONTAINER */
+.languages{
+  max-width:1150px;   /* 🔥 increase little */
+  margin-left:260px;  /* sidebar correct */
+  margin-right:auto;
 
-/* LANGUAGES SECTION FIX */
-.languages {
-  width: 100%;
+  padding:100px 40px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:80px; /* 🔥 more gap between letters & insta */
 }
+
+
 
 .languages .language-container {
   display: grid;
@@ -872,12 +882,12 @@ body {
 }   
 /* left image */
 
+/* RIGHT SIDE FIX */
 .language-animation{
-flex:1;
-display:flex;
-justify-content:center;
+  flex:1;
+  display:flex;
+  justify-content:flex-start; /* 🔥 IMPORTANT CHANGE */
 }
-
 /* language image */
 
 .language-img{
@@ -898,28 +908,80 @@ opacity:0.9;
 
 }
 
+/* ===== LANGUAGES SECTION FINAL ===== */
+/* ===== MAIN LAYOUT FIX ===== */
 
 .languages{
-  padding:120px 80px;
+  max-width:1000px;
+  margin-left:80px;
+  margin-right: auto; /* 🔥 sidebar width match */
+  padding:120px 40px;
+
   display:flex;
-  flex-direction:column;
-  align-items:flex-start;
+  justify-content:space-between;
+  align-items:center;
+  gap:60px; /* 🔥 equal spacing */
 }
 
+/* LEFT GRID */
 .languages-column{
   display:grid;
   grid-template-columns: repeat(2, 1fr);
-  gap:60px 80px;
-  justify-items:center;
-  align-items:center;
-  max-width:400px;
+  gap:50px 60px; /* 🔥 balanced spacing */
 }
 
-/* CARD */
+/* EACH CARD */
 .lang-card{
   display:flex;
   align-items:center;
-  gap:40px;
+  gap:60px; /* 🔥 reduce */
+}
+
+/* RIGHT SIDE FIX */
+.language-animation{
+  flex:1;
+  display:flex;
+  justify-content:flex-start; /* 🔥 IMPORTANT CHANGE */
+}
+
+/* INSTAGRAM */
+.insta-post{
+  width:320px;
+}
+
+
+@media (max-width:768px){
+
+  .languages{
+    flex-direction:column; /* 🔥 only mobile */
+    align-items:center;
+    gap:50px;
+    padding:60px 20px;
+  }
+
+  .languages-column{
+    gap:80px;
+  }
+
+  .language-animation{
+    justify-content:center;
+  }
+
+/* INSTAGRAM CARD */
+.insta-post{
+  width:300px; /* 🔥 consistent size */
+  margin-left:20px; /* 🔥 push slightly right */
+}
+
+}
+
+
+
+/* RIGHT SIDE FIX */
+.language-animation{
+  flex:1;
+  display:flex;
+  justify-content:flex-start; /* 🔥 IMPORTANT CHANGE */
 }
 
 /* LETTER SIZE */
@@ -1129,9 +1191,6 @@ transform:translateX(-50%);
 .contact button:hover{
   background:#ffa000;
 }
-*{
-  outline:1px solid red;
-}
 
 
 .sidebar{
@@ -1141,7 +1200,7 @@ transform:translateX(-50%);
 }
 
 .main{
-  margin-left:240px;  /* SAME VALUE */
+  margin-left:260px;  /* SAME VALUE */
 }
 
 .contact-section{
@@ -1427,11 +1486,11 @@ img {
   flex: 0 0 auto;
   scroll-snap-align: start;
 }
-.languages .lang-container {
+.languages .language-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 10px;
+  gap: 30px;
+  padding: 20px;
 }
 
 .languages .lang-box {
@@ -1469,45 +1528,56 @@ img {
 
 }
 
-@media (max-width: 768px) {
 
-  .languages {
-    padding: 60px 20px;
-    flex-direction: column;   /* IMPORTANT */
-    align-items: center;
+@media (max-width:768px){
+
+  .languages{
+    margin-left:0;           /* 🔥 FIX 1 */
+    max-width:100%;
+    flex-direction:column;
+    align-items:center;
+    gap:40px;
+    padding:50px 15px;
+    text-align:center;
   }
 
-  .languages-column {
+  /* GRID FIX */
+  .languages-column{
+    width:100%;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 100%;
+    gap:30px 20px; /* 🔥 balanced */
+    justify-items:center;
   }
 
-  .lang-card {
-    gap: 15px;
+  /* EACH CARD */
+  .lang-card{
+    flex-direction:column;   /* 🔥 stack */
+    gap:8px;                 /* 🔥 reduce */
+    align-items:center;
   }
 
-  .liquid-letter {
-    width: 60px;
-    height: 60px;
+  /* LETTER SIZE */
+  .liquid-letter{
+    width:60px;
+    height:60px;
   }
 
-  .language-animation {
-    width: 100%;
-    margin-top: 40px;
-    justify-content: center;
+  /* RIGHT SIDE (INSTA) */
+  .language-animation{
+    width:100%;
+    justify-content:center; /* 🔥 center properly */
   }
 
-  .insta-post {
-    width: 90%;   /* avoid overflow */
-    max-width: 320px;
+  /* INSTAGRAM */
+  .insta-post{
+    width:90%;
+    max-width:280px;
+    margin:0 auto;
   }
 
 }
 
 
 
-.languages {
-  display: flex;
-}
+
 
