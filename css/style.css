@@ -1576,6 +1576,29 @@ img {
   }
 
 }
+.insta-post{
+  width:350px;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+
+  /* 🔥 GLOW EFFECT */
+  box-shadow: 
+    0 0 10px rgba(255, 180, 0, 0.4),
+    0 0 25px rgba(255, 180, 0, 0.3),
+    0 0 50px rgba(255, 180, 0, 0.2);
+
+  animation:floatLang 4s ease-in-out infinite;
+  transition: 0.3s;
+}
+
+/* 🔥 HOVER GLOW BOOST */
+.insta-post:hover{
+  box-shadow: 
+    0 0 15px rgba(255, 180, 0, 0.6),
+    0 0 35px rgba(255, 180, 0, 0.5),
+    0 0 70px rgba(255, 180, 0, 0.4);
+}
 
 
 
